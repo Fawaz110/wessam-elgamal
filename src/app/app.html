@@ -1,0 +1,17 @@
+<div class="app">
+  <app-navbar></app-navbar>
+  <div class="">
+    <div class="inner">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>
+@if (loading()) {
+<div
+  class="loader-container fixed z-50 top-0 left-0 right-0 duration-500 bottom-0 bg-white flex items-center justify-center">
+  <div class="loader text-white">
+    <img class="w-20 animate-pulse" src="./assets/eagle.png" alt="">
+  </div>
+</div>
+}

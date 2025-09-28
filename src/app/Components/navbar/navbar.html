@@ -1,0 +1,53 @@
+<nav class="h-16 fixed top-0 left-0 right-0 z-50 duration-200" [ngClass]="scrolled()?'shadow-md bg-white':''">
+    <div class="container px-2 mx-auto h-full flex items-center">
+        <div class="inner flex justify-between gap-5 items-center w-full">
+            <a
+                class="logo flex ltr:text-xl ltr:font-normal rtl:font-bold rtl:text-base text-golder rtl:font-cairo ltr:font-bebas">
+                <img class="ltr:size-10 rtl:size-12" src="./assets/eagle.png" alt="egyption eagle">
+                <span class="name flex flex-col ltr:-space-y-3">
+                    <span class="text-nowrap block">{{"name.f" | translate}}</span>
+                    <span class="text-nowrap block">{{"name.l" | translate}}</span>
+                </span>
+            </a>
+            <button class="md:hidden" (click)="toggleSideNav()">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            <!-- max-md:ltr:-translate-x-full h-screen max-md:overflow-y-auto -->
+            <div
+                class="nav-links max-md:fixed max-md:z-50 max-md:top-0 left-0 right-0 max-md:h-screen max-md:rtl:translate-x-full max-md:ltr:-translate-x-full max-md:opacity-0 duration-200">
+                <div class="layer md:hidden bg-black/50 absolute top-0 left-0 bottom-0 right-0 z-50"></div>
+                <ul
+                    class="flex items-start md:items-center md:justify-between gap-5 max-md:flex-col relative z-50 max-md:w-3/4 min-h-full max-md:bg-white">
+                    <li class="md:hidden flex flex-row-reverse w-full p-5">
+                        <button (click)="toggleSideNav()">
+                            <i class="fa fa-close"></i>
+                        </button>
+                    </li>
+                    <li>
+                        <a class="cursor-pointer" (click)="routeTo('/home')">
+                            <span>{{"nav.home"|translate}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="cursor-pointer" (click)="routeTo('/experience')">
+                            <span>{{"nav.experience"|translate}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="cursor-pointer" (click)="routeTo('/certificates')">
+                            <span>{{"nav.certificates"|translate}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="cursor-pointer" (click)="routeTo('/blogs')">
+                            <span>{{"nav.blogs"|translate}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <app-language-dropdown></app-language-dropdown>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>

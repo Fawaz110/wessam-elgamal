@@ -1,0 +1,38 @@
+<div class="language-dropdown">
+    <div class="inner relative">
+        <button (click)="toggleMenu()"
+            class="selected-lang p-2 border border-gray-900 rounded-md flex gap-2 items-center">
+            <img class="w-6" [src]="(language == 'en')? './assets/usa.png': './assets/egy.png'"
+                [alt]="(language == 'en')? 'usa flag': 'egypt flag'">
+            <span>{{language == 'en'?'english':'عربى'}}</span>
+            <i class="fa-solid fa-angle-down"></i>
+        </button>
+        <div
+            class="lang-menu bg-gray-50 min-w-32 absolute top-full right-0 overflow-hidden rounded-md shadow-md hidden duration-200">
+            <ul>
+                <li class="relative">
+                    <input type="radio" [(ngModel)]="language" (ngModelChange)="languageChanged()" value="ar" id="ar"
+                        class="hidden peer/lang">
+                    <label for="ar"
+                        class="flex gap-2 items-center w-full p-2 hover:bg-gray-200 duration-200 cursor-pointer">
+                        <img class="w-6" src="./assets/egy.png" alt="egypt flag">
+                        <span>عربى</span>
+                    </label>
+                    <i
+                        class="fa-solid fa-check absolute top-1/2 -translate-y-1/2 ltr:right-2 rtl:left-2 opacity-0 duration-200 peer-checked/lang:opacity-100"></i>
+                </li>
+                <li class="relative">
+                    <input type="radio" [(ngModel)]="language" (ngModelChange)="languageChanged()" value="en" id="en"
+                        class="hidden peer/lang">
+                    <label for="en"
+                        class="flex gap-2 items-center w-full p-2 hover:bg-gray-200 duration-200 cursor-pointer">
+                        <img class="w-6" src="./assets/usa.png" alt="usa flag">
+                        <span>english</span>
+                    </label>
+                    <i
+                        class="fa-solid fa-check absolute top-1/2 -translate-y-1/2 ltr:right-2 rtl:left-2 opacity-0 duration-200 peer-checked/lang:opacity-100"></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

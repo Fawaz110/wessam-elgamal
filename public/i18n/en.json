@@ -1,0 +1,41 @@
+{
+    "title": {
+        "home": "Wessam ● Home",
+        "blogs": "Wessam ● Blogs",
+        "certificates": "Wessam ● Certificates",
+        "experience": "Wessam ● Experience",
+        "keep-in-touch": "Wessam ● Keep in Touch"
+    },
+    "name": {
+        "f": "Wessam",
+        "l": "El-gamal"
+    },
+    "nav": {
+        "home": "Home",
+        "experience": "Experience",
+        "blogs": "Blogs",
+        "certificates": "Certificates"
+    },
+    "about": {
+        "label":"About me",
+        "sammary": "Brigadier General, a prominent leader in the Egyptian Armed Forces, has extensive experience in leadership, strategic planning, and operations management.",
+        "p1": "Brigadier General of Staff, I am honored to be one of the sons of the Egyptian Armed Forces who have dedicated their lives to serving the nation and defending its sanctities. Throughout my military career, I have held influential leadership positions and participated in peacekeeping operations and international military cooperation. I believe that serving the nation is an honor and a mission that requires dedication and discipline.",
+        "p2": "In addition to my military service, I have devoted great attention to academics and scientific training, striving to combine field strength with sound thought. I believe that true leadership is based on both knowledge and experience. My enduring vision is to be a role model in action, a model of commitment, and a contributor to preparing new generations capable of facing future challenges and building a stronger and more prosperous nation."
+    },
+    "certificates": {
+        "label": "Certificates",
+        "bg-shadow": "Trained & Studied",
+        "btn": "See all ceritificates"
+    },
+    "experience": {
+        "label": "Experience",
+        "bg-shadow": "Strength & Discipline"
+    },
+    "home": {
+        "works": "home works!"
+    },
+    "cv": {
+        "btn": "Download CV",
+        "file-name": "Wessam El-gamal | CV"
+    }
+}

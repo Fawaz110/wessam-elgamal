@@ -1,0 +1,79 @@
+<section class="bg-main h-screen overflow-hidden flex items-stretch">
+    <div class="inner w-full bg-white/60 pt-16 inline-flex items-center max-md:justify-center">
+        <div class="container mx-auto px-2">
+            <div
+                class="w-full flex max-md:flex-col-reverse flex-wrap items-center justify-center md:justify-between relative">
+                <div class="w-full md:w-1/2 max-md:text-center max-md:flex max-md:flex-col max-md:items-center">
+                    <h1
+                        class="font-bebas text-gray-800 ltr:font-bebas rtl:font-cairo text-5xl md:text-7xl font-bold -tracking-tight mb-5">
+                        {{"name.f"|translate}} {{"name.l"|translate}}</h1>
+                    <p class="mb-5">{{"about.sammary"|translate}}</p>
+                    <a href="./assets/cv.pdf" [download]="'cv.file-name'|translate"
+                        class="px-5 py-2 w-fit text-xl border border-gold/50 bg-golder/50 md:border-gold md:bg-gold hover:bg-golder hover:border-golder/50 duration-200 text-white rounded-full">{{"cv.btn"|translate}}</a>
+                    <!-- <a href="./assets/cv.pdf" download="Wessam El-Gamal | CV"
+                        class="px-5 py-2 w-fit text-xl border border-gold/50 bg-golder/50 md:border-gold md:bg-gold hover:bg-golder hover:border-golder/50 duration-200 text-white rounded-full ltr:block rtl:hidden">Download
+                        CV</a> -->
+                </div>
+                <div
+                    class=" h-full w-[30rem] -skew-x-12 scale-125 z-0 bg-golder/50 absolute ltr:right-0 rtl:left-0 ltr:translate-x-10 rtl:-translate-x-10 max-md:hidden">
+                </div>
+                <div
+                    class="w-full md:w-1/2 md:min-h-screen inline-flex items-center justify-center md:justify-end max-md:mb-5 relative z-10">
+                    <figure class="">
+                        <img class="aspect-square object-cover " src="./assets/img-1-nobg.png" alt="wessam elgamal">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-secondary overflow-hidden">
+    <div class="inner w-full bg-white/60 py-10 inline-flex items-center max-md:justify-center">
+        <div class="container mx-auto px-2">
+            <div class="w-full grid grid-cols-12 gap-5">
+                <div class="col-span-12 md:col-span-5">
+                    <img loading="lazy" class="w-full" src="./assets/about-me-02.png" alt="about me image">
+                </div>
+                <div class="col-span-12 md:col-span-7 inline-flex flex-col justify-center">
+                    <span
+                        class="ps-2 relative after:absolute after:top-0 after:ltr:left-0 after:rounded-e-full after:rtl:right-0 after:bottom-0 after:w-1 after:bg-golder/50">{{"about.label"|translate}}</span>
+                    <h2 class="ltr:font-bebas rtl:font-cairo font-bold text-golder text-5xl mb-5">{{"name.f"|translate}}
+                        {{"name.l"|translate}}</h2>
+                    <p class="mb-3">{{"about.p1"|translate}}</p>
+                    <p class="mb-3">{{"about.p2"|translate}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="inner w-full bg-white/60 py-10 inline-flex items-center max-md:justify-center">
+        <div class="container mx-auto px-2">
+            <app-header [title]="'certificates.label'|translate"
+                [slogan]="'certificates.bg-shadow'| translate"></app-header>
+            <div class="grid grid-cols-12 gap-5 mb-5">
+                <div class="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3">
+                    <app-certificate-card></app-certificate-card>
+                </div>
+                <div class="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3">
+                    <app-certificate-card></app-certificate-card>
+                </div>
+                <div class="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3">
+                    <app-certificate-card></app-certificate-card>
+                </div>
+                <div class="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3">
+                    <app-certificate-card></app-certificate-card>
+                </div>
+            </div>
+            <div class="flex items-center justify-center">
+                <a routerLink="/certificates"
+                    class="px-5 py-2 w-fit text-xl border border-gold/50 text-center bg-golder/50 md:border-gold md:bg-gold max-sm:w-full hover:bg-golder hover:border-golder/50 duration-200 text-white rounded-full">{{"certificates.btn"|translate}}</a>
+            </div>
+        </div>
+    </div>
+    <div class="inner w-full bg-white/60 py-10 inline-flex items-center max-md:justify-center">
+        <div class="container mx-auto px-2">
+            <app-header [title]="'experience.label'|translate" [slogan]="'experience.bg-shadow'|translate"></app-header>
+            <p>to be continued here...</p>
+        </div>
+    </div>
+</section>

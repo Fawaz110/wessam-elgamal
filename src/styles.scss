@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.bg-main {
+    background: url('../public/assets/bg.png') center center no-repeat;
+    background-size: cover;
+}
+
+.bg-secondary {
+    background: url('../public/assets/bg-secondary.png') center center no-repeat;
+    background-size: cover;
+}
+
+@layer components {
+    .bg- {
+        &main,
+        &secondary {
+            @apply bg-opacity-10 bg-fixed;
+        }
+    }
+
+    p {
+        @apply text-lg font-light -tracking-tight text-gray-600;
+    }
+}
+
+
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url('./../public/fonts/BebasNeue-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Cairo';
+    src: url('./../public/fonts/Cairo-VariableFont_slntwght.ttf');
+}
