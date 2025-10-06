@@ -1,1 +1,24 @@
-<p>experience works!</p>
+<section class="bg-main min-h-screen overflow-hidden flex items-stretch pt-20">
+    <div class="inner w-full bg-white/60 py-10 inline-flex items-center max-md:justify-center">
+        <div class="container mx-auto px-2">
+            <app-header [title]="'experience.label'|translate"
+                [slogan]="'experience.bg-shadow'| translate"></app-header>
+            <div class="grid grid-cols-12 gap-5 mb-5">
+                @for (item of experience; track $index) {
+                <div class="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 shadow-md p-5 relative overflow-hidden rounded-md group/card">
+                    <div
+                        class="absolute size-20 top-0 rtl:right-0 ltr:left-0 bg-golder -z-0 rotate-45 ltr:-translate-x-full rtl:translate-x-full group-hover/card:ltr:-translate-x-1/2 group-hover/card:rtl:translate-x-1/2 ltr:-translate-y-1/2 rtl:-translate-y-1/2 duration-200">
+                    </div>
+                    <div class="inner relative z-10 pb-5">
+                        <div class="icon border size-16 mb-3 rounded-full flex items-center justify-center text-2xl">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <p>{{item.role}}</p>
+                    </div>
+                    <span class="text-xs absolute bottom-2 ltr:right-2 rtl:left-2 bg-golder rounded-md text-white inline-block p-1">{{item.location}}</span>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>

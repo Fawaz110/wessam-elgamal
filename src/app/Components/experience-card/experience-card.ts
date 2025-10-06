@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Interfaces } from '../../data/interfaces.export';
 
 @Component({
   selector: 'app-experience-card',
@@ -7,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './experience-card.scss'
 })
 export class ExperienceCard {
-
+  @Input() exp!: Interfaces.ExperienceData
+  // image = series[RandomIndex()];
 }

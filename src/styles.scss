@@ -3,7 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
+html, body {
+    scroll-behavior: smooth;
+}
 .bg-main {
     background: url('../public/assets/bg.png') center center no-repeat;
     background-size: cover;

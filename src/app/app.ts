@@ -5,9 +5,10 @@ import $ from 'jquery';
 import { Footer } from "./Components/footer/footer";
 import { Navbar } from "./Components/navbar/navbar";
 import { Title } from '@angular/platform-browser';
+import { FloatingBtn } from "./Components/floating-btn/floating-btn";
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Navbar, Footer],
+  imports: [RouterOutlet, Navbar, Footer, FloatingBtn],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
@@ -25,7 +26,7 @@ export class App {
       setTimeout(() => {
         this.loading = signal(false);
       }, 500);
-    }, 1000);
+    }, 2000);
     this._TranslateService.addLangs(['ar', 'en']);
     const userLang = navigator.language || (navigator as any).userLanguage;
     const lang = userLang.split('-')[0];

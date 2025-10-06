@@ -1,4 +1,4 @@
-<section class="bg-main h-screen overflow-hidden flex items-stretch">
+<section class="bg-main h-screen overflow-hidden flex items-stretch relative">
     <div class="inner w-full bg-white/60 pt-16 inline-flex items-center max-md:justify-center">
         <div class="container mx-auto px-2">
             <div
@@ -8,11 +8,8 @@
                         class="font-bebas text-gray-800 ltr:font-bebas rtl:font-cairo text-5xl md:text-7xl font-bold -tracking-tight mb-5">
                         {{"name.f"|translate}} {{"name.l"|translate}}</h1>
                     <p class="mb-5">{{"about.sammary"|translate}}</p>
-                    <a href="./assets/cv.pdf" [download]="'cv.file-name'|translate"
+                    <a href="./assets/d-cv.pdf" [download]="'cv.file-name'|translate"
                         class="px-5 py-2 w-fit text-xl border border-gold/50 bg-golder/50 md:border-gold md:bg-gold hover:bg-golder hover:border-golder/50 duration-200 text-white rounded-full">{{"cv.btn"|translate}}</a>
-                    <!-- <a href="./assets/cv.pdf" download="Wessam El-Gamal | CV"
-                        class="px-5 py-2 w-fit text-xl border border-gold/50 bg-golder/50 md:border-gold md:bg-gold hover:bg-golder hover:border-golder/50 duration-200 text-white rounded-full ltr:block rtl:hidden">Download
-                        CV</a> -->
                 </div>
                 <div
                     class=" h-full w-[30rem] -skew-x-12 scale-125 z-0 bg-golder/50 absolute ltr:right-0 rtl:left-0 ltr:translate-x-10 rtl:-translate-x-10 max-md:hidden">
@@ -46,23 +43,60 @@
             </div>
         </div>
     </div>
+
+    <div class="inner w-full bg-gold py-20 mb-10 inline-flex items-center flex-col justify-center">
+        <app-header [invert]="true" [title]="'medals.label'|translate"
+            [slogan]="'medals.bg-shadow'|translate"></app-header>
+        <div class="flex gap-5 flex-wrap items-center justify-center">
+            @for (medal of medals; track $index) {
+            <div
+                class="item group/item hover:bg-white duration-200 flex items-center justify-center gap-2 p-3 rounded-full text-3xl border border-golder shadow-inner shadow-golder hover:shadow-none cursor-default">
+                <i class="fa-solid fa-medal text-white group-hover/item:text-gold duration-200"></i>
+                <p>{{medal}}</p>
+            </div>
+            }
+        </div>
+    </div>
     <div class="inner w-full bg-white/60 py-10 inline-flex items-center max-md:justify-center">
         <div class="container mx-auto px-2">
             <app-header [title]="'certificates.label'|translate"
                 [slogan]="'certificates.bg-shadow'| translate"></app-header>
             <div class="grid grid-cols-12 gap-5 mb-5">
-                <div class="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3">
-                    <app-certificate-card></app-certificate-card>
+                @for (item of certificates; track $index) {
+                <div
+                    class="col-span-12 sm:col-span-6 relative md:col-span-4 lg:col-span-3  group/card border hover:border-gold hover:shadow-md hover:shadow-gold duration-200 overflow-hidden rounded-md">
+                    <div class="card">
+                        <div class="inner">
+                            <div class="content p-5">
+                                <div
+                                    class="icon border size-16 mb-3 rounded-full flex items-center justify-center text-2xl">
+                                    <i class="fa-solid fa-user-graduate"></i>
+                                </div>
+                                <div class="content-inner">
+                                    <div class="head flex items-center justify-between">
+                                        <h1 class="text-2xl font-bold">{{item.title}}</h1>
+                                    </div>
+                                    <p class="mb-5">{{item.location}}</p>
+                                </div>
+                                @if (item.type) {
+                                <div
+                                    class="military flex gap-2 text-xs bg-golder text-white rounded-full px-2 py-1 w-fit absolute bottom-2 ltr:right-2 rtl:left-2">
+                                    <i class="fa-solid fa-person-rifle"></i>
+                                    <span>{{"type.military"|translate}}</span>
+                                </div>
+                                }
+                                @if (!item.type) {
+                                <div
+                                    class="academic flex gap-2 text-xs bg-golder text-white rounded-full px-2 py-1 w-fit absolute bottom-2 ltr:right-2 rtl:left-2">
+                                    <i class="fa-solid fa-user-graduate"></i>
+                                    <span>{{"type.academic"|translate}}</span>
+                                </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3">
-                    <app-certificate-card></app-certificate-card>
-                </div>
-                <div class="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3">
-                    <app-certificate-card></app-certificate-card>
-                </div>
-                <div class="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3">
-                    <app-certificate-card></app-certificate-card>
-                </div>
+                }
             </div>
             <div class="flex items-center justify-center">
                 <a routerLink="/certificates"
@@ -70,10 +104,43 @@
             </div>
         </div>
     </div>
+
+    <div class="inner w-full bg-gold/50 py-20 mb-10 inline-flex items-center flex-col justify-center">
+        <app-header [invert]="false" [title]="'train.label'|translate"
+            [slogan]="'train.bg-shadow'|translate"></app-header>
+        <div class="flex gap-5 flex-wrap items-center justify-center">
+            @for (cycle of cycles; track $index) {
+            <div
+                class="item group/item hover:bg-white duration-200 flex items-center justify-center gap-2 p-3 rounded-full text-3xl border border-gold shadow-inner shadow-gold hover:shadow-none cursor-default">
+                <i class="fa-solid fa-medal text-gold group-hover/item:text-gold duration-200"></i>
+                <p>{{cycle.title}}</p>
+            </div>
+            }
+        </div>
+    </div>
     <div class="inner w-full bg-white/60 py-10 inline-flex items-center max-md:justify-center">
         <div class="container mx-auto px-2">
             <app-header [title]="'experience.label'|translate" [slogan]="'experience.bg-shadow'|translate"></app-header>
-            <p>to be continued here...</p>
+            <div class="grid grid-cols-12 gap-5 mb-5">
+                @for (item of experience; track $index) {
+                <div
+                    class="col-span-12 md:col-span-4 border rounded-md shadow-md p-5 cursor-default relative group/card overflow-hidden">
+                    <div
+                        class="absolute size-20 top-0 rtl:right-0 ltr:left-0 bg-golder -z-0 rotate-45 ltr:-translate-x-full rtl:translate-x-full group-hover/card:ltr:-translate-x-1/2 group-hover/card:rtl:translate-x-1/2 ltr:-translate-y-1/2 rtl:-translate-y-1/2 duration-200">
+                    </div>
+                    <div class="inner relative z-10">
+                        <div class="icon border size-16 mb-3 rounded-full flex items-center justify-center text-2xl">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <p>{{item}}</p>
+                    </div>
+                </div>
+                }
+            </div>
+            <div class="flex items-center justify-center">
+                <a routerLink="/experience"
+                    class="px-5 py-2 w-fit text-xl border border-gold/50 text-center bg-golder/50 md:border-gold md:bg-gold max-sm:w-full hover:bg-golder hover:border-golder/50 duration-200 text-white rounded-full">{{"experience.btn"|translate}}</a>
+            </div>
         </div>
     </div>
 </section>

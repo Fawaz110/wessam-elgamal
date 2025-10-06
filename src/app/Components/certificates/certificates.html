@@ -1,1 +1,45 @@
-<p>certificates works!</p>
+<section class="bg-main min-h-screen overflow-hidden flex items-stretch pt-20">
+    <div class="inner w-full bg-white/60 py-10 inline-flex items-center max-md:justify-center">
+        <div class="container mx-auto px-2">
+            <app-header [title]="'certificates.label'|translate"
+                [slogan]="'certificates.bg-shadow'| translate"></app-header>
+            <div class="grid grid-cols-12 gap-5 mb-5">
+                @for (item of certificates; track $index) {
+                <div
+                    class="col-span-12 sm:col-span-6 relative md:col-span-4 lg:col-span-3  group/card border hover:border-gold hover:shadow-md hover:shadow-gold duration-200 overflow-hidden rounded-md">
+                    <div class="card">
+                        <div class="inner">
+                            <div class="content p-5">
+                                <div
+                                    class="icon border size-16 mb-3 rounded-full flex items-center justify-center text-2xl">
+                                    <i class="fa-solid fa-user-graduate"></i>
+                                </div>
+                                <div class="content-inner">
+                                    <div class="head flex items-center justify-between">
+                                        <h1 class="text-2xl font-bold">{{item.title}}</h1>
+                                    </div>
+                                    <p class="mb-5">{{item.location}}</p>
+                                </div>
+                                @if (item.type) {
+                                <div
+                                    class="military flex gap-2 text-xs bg-golder text-white rounded-full px-2 py-1 w-fit absolute bottom-2 ltr:right-2 rtl:left-2">
+                                    <i class="fa-solid fa-person-rifle"></i>
+                                    <span>{{"type.military"|translate}}</span>
+                                </div>
+                                }
+                                @if (!item.type) {
+                                <div
+                                    class="academic flex gap-2 text-xs bg-golder text-white rounded-full px-2 py-1 w-fit absolute bottom-2 ltr:right-2 rtl:left-2">
+                                    <i class="fa-solid fa-user-graduate"></i>
+                                    <span>{{"type.academic"|translate}}</span>
+                                </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
